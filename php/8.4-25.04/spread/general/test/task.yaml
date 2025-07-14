@@ -1,0 +1,10 @@
+summary: test the 'php:8.4' rock
+
+execute: |
+  echo "Run PHP smoke test"
+  docker run --rm php:8.4 exec php -r "echo 'hello, world!';"
+
+  docker run -d --rm --name php-rock -p 8080:8080 -v $PWD:/app php:8.4 exec php -S 0.0.0.0:8080 -t /app
+  curl -s http://localhost:8080 | grep "hello, world!"
+
+  docker stop php-rock
