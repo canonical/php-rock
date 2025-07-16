@@ -8,11 +8,12 @@ execute: |
 
   # Setup php server
   docker run -d --rm --name php-rock -p 8080:8080 -v $PWD:/app php:8.4 exec php -S 0.0.0.0:8080 -t /app
+  sleep 2
 
   # Test different server pages
-  curl -s http://localhost:8080 | grep "hello, world"
-  curl -s http://localhost:8080/api | jq .status | grep "success"
-  curl -s -X POST http://localhost:8080/form -d "name=Alex" | grep -i 'Submitted name: Alex'
-  curl -s http://localhost:8080/some-random-page | grep "Not Found"
+  curl -s http://127.0.0.1:8080 | grep "hello, world"
+  curl -s http://127.0.0.1:8080/api | jq .status | grep "success"
+  curl -s -X POST http://127.0.0.1:8080/form -d "name=Alex" | grep -i 'Submitted name: Alex'
+  curl -s http://127.0.0.1:8080/some-random-page | grep "Not Found"
 
   docker stop php-rock
