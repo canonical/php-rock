@@ -8,7 +8,11 @@ execute: |
 
   # Setup php server
   docker run -d --rm --name php-rock -p 8080:8080 -v $PWD:/app php:8.4 exec php -S 0.0.0.0:8080 -t /app
-  sleep 2
+  
+  # Wait for port 8080 to be ready
+  while ! lsof -i :8080 >/dev/null 2>&1; do
+    sleep 0.2
+  done
 
   # Test different server pages
   curl -s http://127.0.0.1:8080 | grep "hello, world"
