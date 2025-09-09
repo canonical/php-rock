@@ -1,0 +1,23 @@
+summary: test the 'php:8.3' rock
+
+execute: |
+  echo "Run PHP smoke test"
+
+  # Quickly verify php
+  docker run --rm php:8.3 exec php -r "echo 'hello, world!';"
+
+  # Setup php server
+  docker run -d --rm --name php-rock -p 8080:8080 -v $PWD:/app php:8.3 exec php -S 0.0.0.0:8080 -t /app
+
+  # Wait for port 8080 to be ready
+  while ! lsof -i :8080 >/dev/null 2>&1; do
+    sleep 0.2
+  done
+
+  # Test different server pages
+  curl -s http://127.0.0.1:8080 | grep "hello, world"
+  curl -s http://127.0.0.1:8080/api | jq .status | grep "success"
+  curl -s -X POST http://127.0.0.1:8080/form -d "name=Alex" | grep -i 'Submitted name: Alex'
+  curl -s http://127.0.0.1:8080/some-random-page | grep "Not Found"
+
+  docker stop php-rock
