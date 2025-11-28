@@ -22,22 +22,10 @@ platforms:
 parts:
     php:
         plugin: nil
-        source: https://github.com/alesancor1/chisel-releases.git
-        source-type: git
-        source-branch: 24.04/php
-        override-build: |
-            chisel cut --release ./ --root ${CRAFT_PART_INSTALL} \
-                base-files_release-info \
-                base-files_chisel \
-                php_core
-
-    # TODO waiting for chisel-releases PR
-    # php:
-    #     plugin: nil
-    #     stage-packages:
-    #         - base-files_release-info
-    #         - base-files_chisel
-    #         - php_core
+        stage-packages:
+            - base-files_release-info
+            - base-files_chisel
+            - php_core
 
     deb-security-manifest:
         plugin: make
