@@ -23,6 +23,7 @@ registries:
 
 images:
   - directory: "8.3-24.04"
+  - directory: "8.4-25.10"
   - directory: "8.5-26.04"
 
   ## Example of specifying different registries for a specific rock
