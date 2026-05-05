@@ -1,4 +1,4 @@
-summary: test the 'php:8.5' rock
+summary: test the 'php:8.5-26.04' rock
 
 execute: |
   echo "Run PHP smoke test"
@@ -7,10 +7,10 @@ execute: |
   trap "docker stop php-rock >/dev/null 2>&1" EXIT
 
   # Quickly verify php
-  docker run --rm php:8.5 exec php -r "echo 'hello, world!';"
+  docker run --rm php:8.5-26.04 exec php -r "echo 'hello, world!';"
 
   # Setup php server
-  docker run -d --rm --name php-rock -p 8080:8080 -v $PWD:/app php:8.5 exec php -S 0.0.0.0:8080 -t /app
+  docker run -d --rm --name php-rock -p 8080:8080 -v $PWD:/app php:8.5-26.04 exec php -S 0.0.0.0:8080 -t /app
   
   # Wait for port 8080 to be ready
   timeout 30 bash -c 'until curl -s http://127.0.0.1:8080 >/dev/null 2>&1; do sleep 1; done'
