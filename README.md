@@ -12,3 +12,4 @@ about Chisel [here](https://documentation.ubuntu.com/chisel/en/latest/).
 
 * [PHP 8.3 (Ubuntu 24.04)](./php/8.3-24.04/rockcraft.yaml)
 * [PHP 8.4 (Ubuntu 25.04)](./php/8.4-25.04/rockcraft.yaml)
+* [PHP 8.5 (Ubuntu 26.04)](./php/8.5-26.04/rockcraft.yaml)
