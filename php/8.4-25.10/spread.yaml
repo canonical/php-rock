@@ -1,4 +1,4 @@
-project: php-8.4-25.04
+project: php-8.4-25.10
 
 backends:
   craft:
@@ -22,10 +22,10 @@ suites:
       sudo apt remove --yes retry
 
       # Load the rock into docker
-      sudo rockcraft.skopeo --insecure-policy copy "oci-archive:$CRAFT_ARTIFACT" docker-daemon:php:8.4-25.04
+      sudo rockcraft.skopeo --insecure-policy copy "oci-archive:$CRAFT_ARTIFACT" docker-daemon:php:8.4-25.10
 
     restore: |
-      docker image rm --force php:8.4-25.04
+      docker image rm --force php:8.4-25.10
 
 exclude:
   - .git
