@@ -11,8 +11,7 @@ description: |
     and its core dependencies, no additional modules available.
 
 base: bare
-# TODO: Update to 26.04 when available
-build-base: devel
+build-base: ubuntu@26.04
 
 run-user: _daemon_
 
