@@ -6,7 +6,7 @@ A distroless-like PHP image based on Ubuntu.
 
 This rock is made out of `php_core` chisel slice, meaning it
 contains just the basic packages to run PHP. You can read more
-about Chisel [here](https://documentation.ubuntu.com/chisel/en/latest/).
+about Chisel [here](https://ubuntu.com/chisel/docs/).
 
 ## Available versions
 
