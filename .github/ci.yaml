@@ -23,7 +23,6 @@ registries:
 
 images:
   - directory: "php/8.3-24.04"
-  - directory: "php/8.4-25.10"
   - directory: "php/8.5-26.04"
 
   ## Example of specifying different registries for a specific rock
