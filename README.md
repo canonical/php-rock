@@ -10,7 +10,7 @@ about Chisel [here](https://ubuntu.com/chisel/docs/).
 
 ## Available versions
 
-* [PHP 8.3 (Ubuntu 24.04)](./php/8.3-24.04/rockcraft.yaml)
-* ~~[PHP 8.4 (Ubuntu 25.04)](./php/8.4-25.04/rockcraft.yaml)~~ EOL
-* ~~[PHP 8.4 (Ubuntu 25.10)](./php/8.4-25.10/rockcraft.yaml)~~ EOL
-* [PHP 8.5 (Ubuntu 26.04)](./php/8.5-26.04/rockcraft.yaml)
+* [PHP 8.3 (Ubuntu 24.04)](https://github.com/canonical/php-rock/tree/8.3-24.04)
+* ~~[PHP 8.4 (Ubuntu 25.04)](https://github.com/canonical/php-rock/tree/8.4-25.04)~~ EOL
+* ~~[PHP 8.4 (Ubuntu 25.10)](https://github.com/canonical/php-rock/tree/8.4-25.10)~~ EOL
+* [PHP 8.5 (Ubuntu 26.04)](https://github.com/canonical/php-rock/tree/8.5-26.04)

@@ -1,5 +1,5 @@
 name: php
-version: '8.3'
+version: '8.5'
 
 summary: A popular general-purpose scripting language that is especially suited to web development.
 description: |
@@ -11,7 +11,7 @@ description: |
     and its core dependencies, no additional modules available.
 
 base: bare
-build-base: ubuntu@24.04
+build-base: devel
 
 run-user: _daemon_
 
