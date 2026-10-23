@@ -1,4 +1,4 @@
-project: php-8.5-26.04
+project: php:8.5-26.04
 
 backends:
   craft:
